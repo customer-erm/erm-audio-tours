@@ -1,0 +1,344 @@
+/* =========================================
+   Audio Tour Builder - Element Picker Styles
+   ========================================= */
+
+/* Picker Toolbar */
+.erm-at-picker-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999999;
+    background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.erm-at-picker-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.erm-at-picker-title h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.erm-at-picker-logo {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #0066FF 0%, #00D4FF 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.erm-at-picker-logo svg {
+    width: 20px;
+    height: 20px;
+    color: white;
+}
+
+.erm-at-picker-instructions {
+    color: #8b8b9e;
+    font-size: 14px;
+}
+
+.erm-at-picker-instructions strong {
+    color: #00D4FF;
+}
+
+.erm-at-picker-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.erm-at-picker-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.erm-at-picker-btn-primary {
+    background: linear-gradient(135deg, #0066FF 0%, #00D4FF 100%);
+    color: white;
+}
+
+.erm-at-picker-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 102, 255, 0.4);
+}
+
+.erm-at-picker-btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.erm-at-picker-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Hover Highlight */
+.erm-at-picker-hover {
+    outline: 3px dashed #0066FF !important;
+    outline-offset: 2px !important;
+    background-color: rgba(0, 102, 255, 0.1) !important;
+    cursor: crosshair !important;
+    position: relative;
+}
+
+.erm-at-picker-hover::after {
+    content: attr(data-erm-at-tag);
+    position: absolute;
+    top: -28px;
+    left: 0;
+    background: #0066FF;
+    color: white;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-family: monospace;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 999999;
+    pointer-events: none;
+}
+
+/* Selected Element */
+.erm-at-picker-selected {
+    outline: 3px solid #10b981 !important;
+    outline-offset: 2px !important;
+    background-color: rgba(16, 185, 129, 0.1) !important;
+}
+
+/* Selection Info Panel */
+.erm-at-picker-info {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999999;
+    background: #1e1e2e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px 25px;
+    min-width: 400px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    display: none;
+}
+
+.erm-at-picker-info.visible {
+    display: block;
+    animation: erm-at-slide-up 0.3s ease;
+}
+
+@keyframes erm-at-slide-up {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.erm-at-picker-info-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.erm-at-picker-info-header h4 {
+    margin: 0;
+    color: #10b981;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.erm-at-picker-info-header h4 svg {
+    width: 18px;
+    height: 18px;
+}
+
+.erm-at-picker-info-close {
+    background: none;
+    border: none;
+    color: #8b8b9e;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.erm-at-picker-info-close:hover {
+    color: white;
+}
+
+.erm-at-picker-selector-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.erm-at-picker-selector-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 10px 15px;
+    color: #00D4FF;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+.erm-at-picker-selector-input:focus {
+    outline: none;
+    border-color: #0066FF;
+}
+
+.erm-at-picker-copy-btn {
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.erm-at-picker-copy-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.erm-at-picker-copy-btn.copied {
+    background: #10b981;
+    border-color: #10b981;
+}
+
+.erm-at-picker-element-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+}
+
+.erm-at-picker-element-info span {
+    font-size: 12px;
+    color: #8b8b9e;
+}
+
+.erm-at-picker-element-info strong {
+    color: white;
+    font-weight: 500;
+}
+
+.erm-at-picker-info-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+/* Step Selector Dropdown */
+.erm-at-picker-step-select {
+    margin-bottom: 15px;
+}
+
+.erm-at-picker-step-select label {
+    display: block;
+    color: #8b8b9e;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.erm-at-picker-step-select select {
+    width: 100%;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.erm-at-picker-step-select select:focus {
+    outline: none;
+    border-color: #0066FF;
+}
+
+.erm-at-picker-step-select select option {
+    background: #1e1e2e;
+    color: white;
+}
+
+/* Body padding when picker is active */
+body.erm-at-picker-active {
+    padding-top: 70px !important;
+}
+
+/* Disable pointer events on picker UI elements' children */
+.erm-at-picker-toolbar *,
+.erm-at-picker-info * {
+    pointer-events: auto;
+}
+
+/* Toast notification */
+.erm-at-picker-toast {
+    position: fixed;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999999;
+    background: #10b981;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.erm-at-picker-toast.visible {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .erm-at-picker-toolbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .erm-at-picker-info {
+        min-width: auto;
+        left: 15px;
+        right: 15px;
+        transform: none;
+    }
+    
+    body.erm-at-picker-active {
+        padding-top: 130px !important;
+    }
+}
